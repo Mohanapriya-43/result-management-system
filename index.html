@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result Management System</title>
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= LOGIN PAGE ================= -->
+<section id="login" class="page show">
+    <div class="card">
+        <h1>Login</h1>
+
+        <form id="loginForm">
+            <label>Username</label>
+            <input type="text" required>
+
+            <label>Password</label>
+            <input type="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</section>
+
+
+
+<!-- ================= DASHBOARD PAGE ================= -->
+<section id="dashboard" class="page">
+
+    <div class="dashboard-container">
+
+        <!-- LEFT CARD : ADD STUDENT -->
+        <div class="card">
+            <h1>Add Student</h1>
+
+            <form id="studentForm">
+                <label>Student Name</label>
+                <input type="text" required>
+
+                <label>Roll Number</label>
+                <input type="text" required>
+
+                <label>Semester</label>
+                <input type="text" required>
+
+                <button type="submit">Save Student</button>
+            </form>
+        </div>
+
+        <!-- RIGHT CARD : ACTIONS -->
+        <div class="card nav-card">
+            <h1>Actions</h1>
+
+            <button onclick="show('marks')">Go to Add Marks</button>
+            <button onclick="show('results'); loadResults()">View Results</button>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= ADD MARKS PAGE ================= -->
+<section id="marks" class="page">
+
+    <!-- FORM CARD -->
+    <div class="card">
+        <h1>Add Marks</h1>
+        <h3>Scoring Template</h3>
+
+        <form id="marksForm">
+            <label>Roll Number</label>
+            <input type="text" required>
+
+            <label>Subject</label>
+            <input type="text" required>
+
+            <label>Marks Obtained</label>
+            <input type="number" required>
+
+            <label>Total Marks</label>
+            <input type="number" required>
+
+            <button type="submit">Submit Marks</button>
+        </form>
+    </div>
+
+    <!-- BUTTONS OUTSIDE CARD -->
+    <div class="marks-actions">
+        <button onclick="show('dashboard')">Back to Dashboard</button>
+        <button onclick="show('results'); loadResults()">View Results</button>
+    </div>
+
+</section>
+
+
+
+<!-- ================= RESULTS PAGE ================= -->
+<section id="results" class="page">
+
+    <!-- TABLE CARD -->
+    <div class="card">
+        <h1>Results</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Roll</th>
+                    <th>Name</th>
+                    <th>Subject</th>
+                    <th>Marks</th>
+                    <th>Grade</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody id="resultBody"></tbody>
+        </table>
+    </div>
+
+    <!-- BUTTONS OUTSIDE CARD -->
+    <div class="results-actions">
+        <button onclick="show('dashboard')">Back to Dashboard</button>
+        <button onclick="show('marks')">Add More Marks</button>
+    </div>
+
+</section>
+
+
+
+<!-- Link JavaScript -->
+<script src="script.js"></script>
+
+</body>
+</html>

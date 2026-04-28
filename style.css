@@ -1,0 +1,194 @@
+/* ========================= */
+/* RESET */
+/* ========================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI", sans-serif;
+}
+
+/* ========================= */
+/* BODY BACKGROUND */
+/* ========================= */
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg,#020617,#0b0f2e,#082f49,#0f766e);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* ========================= */
+/* PAGE SYSTEM */
+/* ========================= */
+.page{
+    display:none;
+    width:100%;
+}
+
+.page.show{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+/* ========================= */
+/* CARD STYLE */
+/* ========================= */
+.card{
+    background:#ffffff;
+    width:420px;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 25px 60px rgba(0,0,0,0.6);
+    overflow-x:auto;
+}
+
+/* ========================= */
+/* HEADINGS */
+/* ========================= */
+h1{
+    text-align:center;
+    margin-bottom:20px;
+    color:#0f172a;
+}
+
+h3{
+    text-align:center;
+    margin-bottom:15px;
+    color:#555;
+}
+
+/* ========================= */
+/* FORM STYLING */
+/* ========================= */
+label{
+    display:block;
+    margin-top:10px;
+    font-weight:500;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    margin-bottom:15px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    transition:0.3s;
+}
+
+input:focus{
+    outline:none;
+    border-color:#0f766e;
+    box-shadow:0 0 5px rgba(15,118,110,0.5);
+}
+
+/* ========================= */
+/* BUTTON STYLE */
+/* ========================= */
+button{
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:#0f766e;
+    color:white;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#020617;
+    transform:translateY(-2px);
+}
+
+/* ========================= */
+/* DASHBOARD LAYOUT */
+/* (Only dashboard keeps side-by-side cards) */
+/* ========================= */
+.dashboard-container{
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    gap:40px;
+}
+
+.dashboard-container .card{
+    width:380px;
+}
+
+.nav-card{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+/* ========================= */
+/* ACTION BUTTONS BELOW CARD */
+/* Used for Add Student / Add Marks / Results */
+/* ========================= */
+.marks-actions,
+.results-actions{
+    margin-top:20px;
+    display:flex;
+    justify-content:center; /* CENTER buttons */
+    gap:20px;
+}
+
+/* Fixed width buttons (not stretched) */
+.marks-actions button,
+.results-actions button{
+    width:200px;
+}
+
+/* ========================= */
+/* TABLE STYLE */
+/* ========================= */
+table{
+    width:100%;
+    border-collapse:collapse;
+    table-layout:fixed;
+    word-wrap:break-word;
+}
+
+th{
+    background:#0f766e;
+    color:white;
+    padding:10px;
+    font-size:14px;
+}
+
+td{
+    padding:8px;
+    border:1px solid #ddd;
+    text-align:center;
+    font-size:14px;
+}
+
+tr:nth-child(even){
+    background:#f4f4f4;
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+@media(max-width:900px){
+
+    .dashboard-container{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .marks-actions,
+    .results-actions{
+        flex-direction:column;
+    }
+
+    .marks-actions button,
+    .results-actions button{
+        width:100%;
+    }
+}
